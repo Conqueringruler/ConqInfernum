@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "conqinfernum",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Conq_'s Infernum",
+  "description": "This mod allows enemies to rarely spawn with Infernum, giving them massive strength as well as rewards.",
   "authors": [
-    "Turnip Labs"
+    "Conq_"
   ],
   "contact": {
     "homepage": "",
@@ -19,20 +19,20 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"turniplabs.examplemod.ExampleMod"
+			"conq_.conqinfernum.ConqInfernum"
     ],
 		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"conq_.conqinfernum.ConqInfernum"
 		],
 		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"conq_.conqinfernum.ConqInfernum"
 		],
 		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+			"conq_.conqinfernum.ConqInfernum"
 		]
 	},
   "mixins": [
-      "examplemod.mixins.json"
+    "conqinfernum.mixins.json"
   ],
 
   "depends": {
