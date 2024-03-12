@@ -2,6 +2,7 @@ package conq_.conqinfernum.mixin;
 
 
 import conq_.conqinfernum.EnragedInterface;
+import conq_.conqinfernum.item.Infernum;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.EntityItem;
@@ -138,6 +139,76 @@ public abstract class HostileTestingMixin extends EntityPathfinder implements En
 
 
 	}
+
+		if (this.health <= 0)
+		{
+			if (conqinfernum$isEnraged()) {
+				if (!DeadYet) {
+					int InfernAmount = random.nextInt(5);
+					switch (random.nextInt(8))
+					{
+
+						case 1:
+							EntityItem itemss = this.spawnAtLocation(new ItemStack(Item.ingotGold, 11), 1.0F);
+							this.world.entityJoinedWorld(itemss); // So w/ Minecraft do I need to declare when things are spawned for correct syncing? idk
+							EntityItem InfernItem = this.spawnAtLocation(new ItemStack(Infernum.infernumItem, InfernAmount), 1.0F);
+							this.world.entityJoinedWorld(InfernItem);
+							DeadYet = true;
+							break;
+						case 2:
+							itemss = this.spawnAtLocation(new ItemStack(Item.foodAppleGold, 1), 1.0F);
+							this.world.entityJoinedWorld(itemss);
+							InfernItem = this.spawnAtLocation(new ItemStack(Infernum.infernumItem, InfernAmount), 1.0F);
+							this.world.entityJoinedWorld(InfernItem);
+							DeadYet = true;
+							break;
+						case 3:
+							itemss = this.spawnAtLocation(new ItemStack(Item.diamond, 1), 1.0F);
+							this.world.entityJoinedWorld(itemss);
+							InfernItem = this.spawnAtLocation(new ItemStack(Infernum.infernumItem, InfernAmount), 1.0F);
+							this.world.entityJoinedWorld(InfernItem);
+
+							DeadYet = true;
+							break;
+						case 4:
+							itemss = this.spawnAtLocation(new ItemStack(Block.dirtScorchedRich, 21), 1.0F);
+							this.world.entityJoinedWorld(itemss);
+							InfernItem = this.spawnAtLocation(new ItemStack(Infernum.infernumItem, InfernAmount), 1.0F);
+							this.world.entityJoinedWorld(InfernItem);
+
+							DeadYet = true;
+							break;
+						case 5:
+							itemss = this.spawnAtLocation(new ItemStack(Block.cake, 1), 1.0F);
+							this.world.entityJoinedWorld(itemss);
+							InfernItem = this.spawnAtLocation(new ItemStack(Infernum.infernumItem, InfernAmount), 1.0F);
+							this.world.entityJoinedWorld(InfernItem);
+
+							DeadYet = true;
+							break;
+						case 6:
+							itemss = this.spawnAtLocation(new ItemStack(Item.oreRawGold, 17), 1.0F);
+							this.world.entityJoinedWorld(itemss);
+							InfernItem = this.spawnAtLocation(new ItemStack(Infernum.infernumItem, InfernAmount), 1.0F);
+							this.world.entityJoinedWorld(InfernItem);
+
+							DeadYet = true;
+							break;
+						case 7:
+							itemss = this.spawnAtLocation(new ItemStack(Block.blockGold, 2), 1.0F);
+							this.world.entityJoinedWorld(itemss);
+							InfernItem = this.spawnAtLocation(new ItemStack(Infernum.infernumItem, InfernAmount), 1.0F);
+							this.world.entityJoinedWorld(InfernItem);
+
+							DeadYet = true;
+							break;
+					}
+
+
+				}
+			}
+
+		}
 	}
 
 
@@ -170,62 +241,11 @@ public abstract class HostileTestingMixin extends EntityPathfinder implements En
 	@Inject(method = "hurt", at = @At(value = "TAIL"))
 	public void hurt(Entity attacker, int i, DamageType type, CallbackInfoReturnable<Boolean> cir) {
 
-			if (this.health <= 0)
-			{
-				if (conqinfernum$isEnraged()) {
-					if (DeadYet == false) {
-						switch (random.nextInt(8))
-						{
-							case 1:
-								EntityItem itemss = this.spawnAtLocation(new ItemStack(Item.ingotGold, 11), 1.0F);
-								this.world.entityJoinedWorld(itemss); // So w/ Minecraft do I need to declare when things are spawned for correct syncing? idk
-								DeadYet = true;
-							break;
-							case 2:
-								itemss = this.spawnAtLocation(new ItemStack(Item.foodAppleGold, 1), 1.0F);
-								this.world.entityJoinedWorld(itemss);
-								DeadYet = true;
-								break;
-							case 3:
-								itemss = this.spawnAtLocation(new ItemStack(Item.diamond, 1), 1.0F);
-								this.world.entityJoinedWorld(itemss);
-
-								DeadYet = true;
-							break;
-							case 4:
-								itemss = this.spawnAtLocation(new ItemStack(Block.dirtScorchedRich, 21), 1.0F);
-								this.world.entityJoinedWorld(itemss);
-
-								DeadYet = true;
-								break;
-							case 5:
-								itemss = this.spawnAtLocation(new ItemStack(Block.cake, 1), 1.0F);
-								this.world.entityJoinedWorld(itemss);
-
-								DeadYet = true;
-								break;
-							case 6:
-								itemss = this.spawnAtLocation(new ItemStack(Item.oreRawGold, 17), 1.0F);
-								this.world.entityJoinedWorld(itemss);
-
-								DeadYet = true;
-								break;
-							case 7:
-								itemss = this.spawnAtLocation(new ItemStack(Block.blockGold, 2), 1.0F);
-								this.world.entityJoinedWorld(itemss);
-
-								DeadYet = true;
-								break;
-						}
 
 
-					}
-				}
 
 			}
 
-
-			}
 		}
 
 
