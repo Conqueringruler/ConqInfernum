@@ -178,7 +178,7 @@ public abstract class HostileTestingMixin extends EntityPathfinder implements En
 						{
 							case 1:
 								EntityItem itemss = this.spawnAtLocation(new ItemStack(Item.ingotGold, 11), 1.0F);
-								this.world.entityJoinedWorld(itemss);
+								this.world.entityJoinedWorld(itemss); // So w/ Minecraft do I need to declare when things are spawned for correct syncing? idk
 								DeadYet = true;
 							break;
 							case 2:

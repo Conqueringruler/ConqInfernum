@@ -24,7 +24,7 @@ public abstract class EntitySizeTestingMixin<T extends EntityLiving> extends Ent
 	private void makeSmall(T entity, double x, double y, double z, float yaw, float partialTick, CallbackInfo ci){
 		if ((entity instanceof EnragedInterface && ((EnragedInterface) entity).conqinfernum$isEnraged())){
 			GL11.glScalef(1.1f, 1.1f, 1.1f);
-			GL11.glColor3d(1, 0.5, 0.04);
+			GL11.glColor3d(2, 0.5, 0.04);
 
 		}
 	}
