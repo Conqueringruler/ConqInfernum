@@ -144,7 +144,23 @@ public abstract class HostileTestingMixin extends EntityPathfinder implements En
 		{
 			if (conqinfernum$isEnraged()) {
 				if (!DeadYet) {
-					int InfernAmount = random.nextInt(5);
+					int InfernAmount = random.nextInt(4);
+					switch (random.nextInt(2))
+					{
+
+						case 1:
+							EntityItem InfernItem = this.spawnAtLocation(new ItemStack(Infernum.infernumItem, InfernAmount), 1.0F);
+							this.world.entityJoinedWorld(InfernItem);
+							DeadYet = true;
+							break;
+						case 2:
+							InfernItem = this.spawnAtLocation(new ItemStack(Infernum.infernumItem, InfernAmount), 1.0F);
+							this.world.entityJoinedWorld(InfernItem);
+							DeadYet = true;
+		 					break;
+
+
+					}
 					switch (random.nextInt(8))
 					{
 

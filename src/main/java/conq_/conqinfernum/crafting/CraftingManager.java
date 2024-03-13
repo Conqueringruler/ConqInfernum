@@ -21,6 +21,9 @@ public class CraftingManager {
 			.addInput('C', Item.coal)
 			.create("nether_coal", new ItemStack(Item.nethercoal, 1));
 
-
+		RecipeBuilder.Shaped(ConqInfernum.MOD_ID, "NNN", "NIN", "NNN")
+			.addInput('I', Infernum.infernumItem)
+			.addInput('N', Block.netherrack)
+			.create("igneous_netherrack", new ItemStack(Block.netherrackIgneous, 8));
 	}
 }
