@@ -5,4 +5,5 @@ public interface EnragedInterface {
 
 	boolean conqinfernum$isEnraged();
 
+	int conqinfernum$EnragedChance();
 }

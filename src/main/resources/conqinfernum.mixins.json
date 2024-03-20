@@ -4,11 +4,14 @@
     "package": "conq_.conqinfernum.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
-      "HostileTestingMixin",
-      "EntitySizeTestingMixin"
+      "EntitySizeTestingMixin",
+      "HostileTestingMixin"
     ],
     "client": [
     ],
+  "server": [
+
+  ],
     "injectors": {
         "defaultRequire": 1
   }
